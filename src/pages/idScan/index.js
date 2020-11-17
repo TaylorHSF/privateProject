@@ -7,7 +7,7 @@ const videoHeight = 720;
 const canvasWidth = 320;
 const canvasHeight = 180;
 
-const idScan = () => {
+const IdScan = () => {
   const setupCamera = async () => {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       throw new Error('Browser API navigator.mediaDevices.getUserMedia not available');
@@ -70,4 +70,4 @@ const idScan = () => {
   );
 };
 
-export default idScan;
+export default IdScan;

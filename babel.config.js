@@ -1,7 +1,8 @@
 /** @format */
 
 module.exports = {
-  presents: ['@babel/preset-env', '@babel/preset-react'],
+  presets: ['@babel/preset-env', '@babel/preset-react'],
+  // presets: ['env', 'react'],
   plugins: [
     '@babel/plugin-transform-runtime',
     '@babel/plugin-proposal-class-properties',

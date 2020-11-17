@@ -5,13 +5,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const srcPath = path.join(__dirname, '/../src');
-const _publicPath = '/visitorAppointment/';
+const _publicPath = '/privateProject/';
 
 const config = {
   mode: 'production',
   entry: ['babel-polyfill', './src/index'],
   output: {
-    path: path.resolve(__dirname, '../visitorAppointment'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'assets/[name]-[hash].js',
     publicPath: _publicPath,
   },
@@ -38,13 +38,12 @@ const config = {
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
-          options: { presets: ['env'] },
+          options: { presets: ['@babel/preset-env'] },
         },
       },
     ],
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './index.html',

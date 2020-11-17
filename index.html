@@ -1,0 +1,78 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AI便民工具</title>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--页面关键词 keywords-->
+    <meta name="keywords" content="" />
+    <!--页面描述-->
+    <meta name="description" content="" />
+    <!-- 为移动设备添加 viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <meta name="format-detection" content="telphone=no, email=no" />
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit" />
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait" />
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait" />
+
+    <script type="text/javascript">
+      function setupWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+          return callback(WebViewJavascriptBridge);
+        } else {
+          document.addEventListener(
+            'WebViewJavascriptBridgeReady',
+            function () {
+              callback(WebViewJavascriptBridge);
+            },
+            false,
+          );
+        }
+        if (window.WVJBCallbacks) {
+          return window.WVJBCallbacks.push(callback);
+        }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'https://__bridge_loaded__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function () {
+          document.documentElement.removeChild(WVJBIframe);
+        }, 0);
+      }
+      setupWebViewJavascriptBridge(function (bridge) {
+        window.bridge = bridge;
+      });
+    </script>
+    <script type="text/javascript">
+      function setSize(argument) {
+        var width = document.documentElement.clientWidth;
+        var height = document.documentElement.clientHeight;
+        var fontSize = (width / 750) * 100;
+        document.getElementsByTagName('html')[0].style.fontSize = fontSize + 'px';
+      }
+      window.onload = setSize;
+      window.onresize = setSize;
+    </script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script>
+      __REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+    </script>
+  </body>
+</html>

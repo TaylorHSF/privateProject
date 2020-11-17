@@ -4,13 +4,13 @@ const path = require('path');
 const webpack = require('webpack');
 
 const srcPath = path.join(__dirname, '/../src');
-const _publicPath = '/assets/';
+const _publicPath = '/privateProject/';
 
 const config = {
   mode: 'development',
   entry: ['./src/index'],
   output: {
-    path: path.resolve(__dirname, '../dist/assets'),
+    path: path.resolve(__dirname, '../build'),
     filename: 'app.js',
     publicPath: _publicPath,
   },
@@ -49,7 +49,7 @@ const config = {
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
-          options: { presets: ['env'] },
+          options: { presets: ['@babel/preset-env'] },
         },
       },
       {
@@ -60,7 +60,7 @@ const config = {
       },
     ],
   },
-  plugins: [new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin()],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   resolve: {
     extensions: ['.js'],
     alias: {
